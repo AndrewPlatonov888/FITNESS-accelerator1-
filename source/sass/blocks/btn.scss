@@ -9,18 +9,130 @@
   cursor: pointer;
 
   transition: opacity $trans-default;
+  user-select: none;
 
-  &--red {
-    background-color: $color-torch-red;
+  &--form {
+    @include secondary-regular(12px, 12px);
+    display: flex;
+    width: 410px;
+    justify-content: center;
+    padding: 27px 56px;
+    padding-bottom: 23px;
+    background-color: transparent;
+    border: 2px solid $color-default-white;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    transition: $trans-default;
+
+    @include vp-1365 {
+      width: 502px;
+      padding: 20px 197px;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      padding: 20px 106px;
+    }
+
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-default-white;
+      color: $color-egyptian-blue;
+    }
+
+    &:active {
+      color: $color-sapphire;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 
-  &:disabled {
-    opacity: 0.5;
+  &--questions {
+    width: 260px;
+    justify-content: center;
+    align-items: center;
+    padding: 19px 48px 15px 48px;
+    color: $color-sapphire;
+    background-color: transparent;
+    border: 1px solid $color-sapphire-02;
+    opacity: 1;
+    box-sizing: border-box;
+    transition: $trans-default;
+    user-select: none;
 
-    pointer-events: none;
+    @include vp-767 {
+      width: 141px;
+      padding: 14px 48px 12px 48px;
+    }
+
+    &.is-active {
+      background: linear-gradient(97deg, #ed0233 17.6%, #003eb7 95.31%);
+      color: $color-default-white;
+      border: 1px solid transparent;
+      border-left: none;
+      border-right: none;
+      transition: $trans-default;
+
+      &:hover,
+      &:focus-visible {
+        border: 1px solid transparent;
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      border: 1px solid $color-sapphire;
+      transition: $trans-default;
+    }
   }
 
-  @include hover-focus {
-    opacity: 0.8;
+  &--accordion {
+    @include secondary-regular(24px, 24px);
+    color: $color-sapphire;
+    background-color: $color-default-white;
+    padding: 0;
+    padding-top: 13.4px;
+    padding-bottom: 4.5px;
+
+    @include vp-1365 {
+      @include secondary-regular(22px, 22px);
+      padding-top: 15px;
+      padding-right: 100px;
+      text-align: left;
+    }
+
+    @include vp-767 {
+      @include secondary-regular(20px, 20px);
+      padding-top: 15px;
+      padding-right: 55px;
+      text-align: left;
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
+      border-radius: 50%;
+      background:
+        linear-gradient($color-default-white, $color-default-white),
+        linear-gradient($color-default-white, $color-default-white),
+        $color-resolution-blue;
+      background-position: center;
+      background-size: 20px 1px, 1px 20px;
+      background-repeat: no-repeat;
+      transition: background-color $trans-default;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
   }
 }

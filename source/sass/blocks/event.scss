@@ -1,0 +1,263 @@
+.event {
+  display: flex;
+  justify-content: center;
+}
+
+.event__container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 120px;
+  padding-left: 0;
+  padding-right: 0;
+  flex-wrap: nowrap;
+
+  @include vp-1365 {
+    padding-bottom: 100px;
+    flex-wrap: nowrap;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 0;
+    padding-bottom: 70.5px;
+    flex-wrap: wrap;
+  }
+}
+
+.event__header {
+  display: flex;
+  gap: 68px;
+  margin-bottom: 23px;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    gap: 40px;
+    margin-bottom: 6px;
+  }
+
+  @include vp-767 {
+    gap: 37px;
+    margin-bottom: 13px;
+  }
+}
+
+.event__description {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding-top: 81px;
+  padding-bottom: 80.05px;
+  padding-left: 80.01px;
+  padding-right: 80.03px;
+  background-color: $color-torch-red;
+
+  @include vp-1365 {
+    width: 292px;
+    padding-top: 40px;
+    padding-bottom: 45.05px;
+    padding-left: 45.01px;
+    padding-right: 45.03px;
+  }
+
+  @include vp-767 {
+    width: 290px;
+    padding: 40px;
+  }
+}
+
+.event__title {
+  @include primary-semibold(82px, 76px);
+  display: flex;
+  width: 180px;
+  margin: 0;
+  padding: 0;
+  color: $color-default-white;
+  letter-spacing: 2.46px;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    @include primary-semibold(48px, 46px);
+    letter-spacing: 1.44px;
+    width: 106px;
+  }
+
+  @include vp-767 {
+    width: 117px;
+  }
+}
+
+.event__details {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  flex-direction: column;
+
+  @include vp-1365 {
+    gap: 8px;
+  }
+
+  @include vp-767 {
+    gap: 6px;
+  }
+}
+
+.event__time {
+  @include secondary-light(18px, 24px);
+  display: flex;
+  color: $color-default-white;
+  margin-bottom: 7px;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    margin-bottom: 0;
+  }
+
+  @include vp-767 {
+    @include secondary-light(16px, 20px);
+    margin-bottom: -1px;
+  }
+}
+
+.event__number {
+  @include secondary-bold(40px, 40px);
+  display: flex;
+  color: $color-default-white;
+  margin: 0;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    @include secondary-bold(24px, 24px);
+  }
+}
+
+.event__date {
+  display: flex;
+  border-top: 1px solid $color-default-white;
+  padding-top: 3px;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    padding-top: 1px;
+  }
+
+  @include vp-767 {
+    padding-top: 3px;
+  }
+}
+
+.event__month {
+  @include secondary-regular(14px, 14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  width: 43px;
+  padding-left: 6px;
+  margin-bottom: 1px;
+  color: $color-default-white;
+  border-top: 1px solid $color-default-white;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    @include secondary-regular(10px, 10px);
+    gap: 1px;
+    padding-left: 4px;
+    width: 30px;
+  }
+
+  @include vp-767 {
+    width: 31px;
+    gap: 0;
+    margin-bottom: 2px;
+  }
+}
+
+.event__annotation {
+  @include secondary-light(18px, 24px);
+  display: flex;
+  margin: 0;
+  padding: 0;
+  color: $color-default-white;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    margin-bottom: 21px;
+  }
+
+  @include vp-767 {
+    @include secondary-light(16px, 20px);
+    margin-bottom: 20px;
+  }
+}
+
+.event__link {
+  @include secondary-bold(12px, 12px);
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: transparent;
+  padding: 25px 56px;
+  border: 2px solid $color-default-white;
+  flex-wrap: wrap;
+  transition: $trans-default;
+  user-select: none;
+
+  @include vp-1365 {
+    padding: 20px 38px;
+  }
+
+  @include vp-767 {
+    padding: 21px 40px;
+    padding-bottom: 19px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-default-white;
+    color: $color-egyptian-blue;
+  }
+
+  &:active {
+    color: $color-sapphire;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.event__image-container {
+  display: flex;
+  background-color: $color-midnight-express;
+  align-items: center;
+
+  img {
+    @include vp-1365 {
+      width: 386px;
+      height: 324px;
+    }
+
+    @include vp-767 {
+      width: 290px;
+      height: 292px;
+    }
+  }
+}
+
+.event__break {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+  }
+}

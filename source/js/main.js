@@ -1,6 +1,11 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
+import {setSmoothScroll} from './smooth-scroll';
+import {selectSubscription, hoverSubscriptionOption} from './subscription-tabs';
+import {setEventsNextButtons, setEventsPrevButtons} from './swiper-navi-events';
+// import {initializeVideoModule, setPlayEvent} from './play-movie';
+
 
 // ---------------------------------
 
@@ -10,6 +15,13 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+  setSmoothScroll();
+  selectSubscription();
+  hoverSubscriptionOption();
+  setEventsNextButtons();
+  setEventsPrevButtons();
+  // setPlayEvent();
+  // onPlayerReady();
 
   // Modules
   // ---------------------------------

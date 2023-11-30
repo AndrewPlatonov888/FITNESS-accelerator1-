@@ -1,0 +1,142 @@
+.swiper-slide {
+  cursor: pointer;
+  overflow: hidden;
+
+  .swiper-slide__content {
+    position: absolute;
+    width: 260px;
+    height: 100%;
+    top: 0;
+    color: $color-default-white;
+    transition: 0.6s;
+
+    @include vp-1365 {
+      width: 268px;
+      height: 100%;
+    }
+
+    @include vp-767 {
+      width: 226px;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    .swiper-slide__resume {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide__content {
+      background: rgba(16, 38, 84, 0.89);
+    }
+
+    .swiper-slide__title {
+      margin-top: 46.5px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.swiper-slide__title {
+  @include slow_slide_apperance($trans-apperance);
+  @include secondary-regular(22px, 22px);
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  padding: 0 20px;
+  margin-top: 246px;
+  flex-wrap: wrap;
+  transition: margin-top  0.6s;
+
+  @include vp-1365 {
+    @include secondary-regular(20px, 20px);
+    width: 268px;
+  }
+
+  @include vp-767 {
+    @include secondary-regular(20px, 20px);
+    width: 226px;
+    margin-top: 234px;
+  }
+}
+
+.swiper-slide__resume {
+  flex-direction: column;
+  display: none;
+}
+
+.swiper-slide__subtitle {
+  @include secondary-light(16px, 24px);
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  padding: 0 20px;
+  color: $color-spindle;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    width: 268px;
+  }
+
+  @include vp-767 {
+    width: 226px;
+    margin-bottom: 8px;
+  }
+}
+
+.swiper-slide__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0 50px 0 66px;
+  list-style-type: none;
+
+  @include vp-767 {
+    padding: 0 30px 0 46px;
+  }
+}
+
+.swiper-slide__item {
+  @include secondary-regular(14px, 22px);
+  position: relative;
+}
+
+.swiper-slide__item::before {
+  @include secondary-regular(14px, 22px);
+  display: block;
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $color-default-white;
+  top: 8px;
+  left: -16px;
+}
+
+.swiper-slide__image-container {
+  @include vp-1365 {
+    display: flex;
+    height: 294px;
+    width: 268px;
+
+    img {
+      height: 294px;
+      width: 268px;
+    }
+  }
+
+  @include vp-767 {
+    height: 274px;
+    width: 226px;
+
+    img {
+      height: 274px;
+      width: 226px;
+    }
+  }
+}

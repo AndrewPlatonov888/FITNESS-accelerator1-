@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import del from 'del';
 import {compileStyles, compileMinStyles} from './gulp/compileStyles.mjs';
-import { copy, copyImages, copySvg } from './gulp/copyAssets.mjs';
+import {copy, copyImages, copySvg} from './gulp/copyAssets.mjs';
 import {compileMainMinScripts, compileMainScripts, compileVendorScripts} from './gulp/compileScripts.mjs';
 import {optimizeSvg, sprite, createWebp, optimizePng, optimizeJpg} from './gulp/optimizeImages.mjs';
 
@@ -14,7 +14,7 @@ const clean = () => del('build');
 const syncServer = () => {
   server.init({
     server: 'build/',
-    index: 'sitemap.html',
+    index: 'index.html',
     notify: false,
     open: true,
     cors: true,
@@ -43,4 +43,10 @@ const build = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, c
 const dev = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileMainMinScripts, compileVendorScripts, optimizePng, optimizeJpg, optimizeSvg), syncServer);
 const start = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, compileMainScripts, compileVendorScripts), syncServer);
 
-export { createWebp as webp, build, start, dev};
+// const build = gulp.series(clean, copy, sprite, gulp.parallel(compileMainMinScripts, optimizeSvg));
+// const dev = gulp.series(clean, copy, sprite, gulp.parallel(optimizeJpg, optimizeSvg), syncServer);
+// const start = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles), syncServer);
+
+export {createWebp as webp, build, start, dev};
+
+// export {build, start, dev};

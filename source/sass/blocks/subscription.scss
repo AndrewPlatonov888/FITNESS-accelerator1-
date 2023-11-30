@@ -1,0 +1,135 @@
+.subscription {
+  display: flex;
+  padding: 126px 0 240px 0;
+  justify-content: center;
+  overflow: hidden;
+
+  @include vp-1365 {
+    padding: 100px 0 201px 0;
+  }
+
+  @include vp-767 {
+    padding: 70px 0 70px 0;
+  }
+}
+
+.subscription__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.subscription__title {
+  justify-content: center;
+  margin-bottom: 20px;
+
+  @include vp-1365 {
+    margin-bottom: 23px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 9px;
+  }
+}
+
+.subscription__list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 36px;
+  border-bottom: 2px solid rgba(120, 120, 120, 0.2);
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    gap: 55px;
+    margin-bottom: 44px;
+  }
+
+  @include vp-767 {
+    gap: 46px;
+    margin-bottom: 35px;
+  }
+}
+
+.subscription__item {
+  display: flex;
+  margin-bottom: -2px;
+  flex-wrap: wrap;
+  transition: $trans-default;
+}
+
+.subscription__time {
+  @include secondary-regular(20px, 20px);
+  display: flex;
+  color: $color-sapphire-05;
+  padding: 12.5px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+  flex-wrap: wrap;
+  cursor: pointer;
+  transition: $trans-default;
+  user-select: none;
+
+  @include vp-1365 {
+    @include secondary-regular(18px, 18px);
+    padding: 13.5px 0;
+  }
+
+  @include vp-767 {
+    @include secondary-regular(16px, 16px);
+    padding: 12.5px 0;
+    padding-bottom: 15px;
+  }
+
+  &.is-active {
+    color: $color-sapphire;
+    border-bottom: 2px solid $color-crimson;
+    transition: $trans-default;
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-sapphire;
+    border-bottom: 2px solid $color-crimson;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}
+
+.subscription__wrapper {
+  position: relative;
+}
+
+.subscription__image-container {
+  position: absolute;
+  display: flex;
+  width: 470px;
+  height: 494px;
+  bottom: -270px;
+  right: -286px;
+  z-index: 1;
+
+  @include vp-1365 {
+    width: 401px;
+    height: 422px;
+    bottom: -250px;
+    right: -239.4px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}

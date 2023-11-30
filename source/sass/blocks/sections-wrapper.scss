@@ -1,0 +1,10 @@
+.sections-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    flex-direction: column;
+  }
+}

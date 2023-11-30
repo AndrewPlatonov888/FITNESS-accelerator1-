@@ -1,0 +1,152 @@
+.contacts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 59px 50px 60px 120px;
+  box-sizing: border-box;
+
+  @include vp-1365 {
+    width: 503px;
+    padding: 106px 0 99px 0;
+    margin: 0 auto;
+  }
+
+  @include vp-767 {
+    width: 290px;
+    padding: 67px 0 70px 0;
+    gap: 28px;
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: -3px;
+    left: 0;
+    background-color: $color-light-slate-grey;
+
+    @include vp-1365 {
+      display: none;
+    }
+  }
+}
+
+.contacts__container {
+  padding: 0;
+}
+
+.contacts__title {
+  margin: 0;
+  margin-bottom: 40px;
+
+  @include vp-1365 {
+    @include primary-bold(42px, 42px);
+  }
+
+  @include vp-767 {
+    @include primary-semibold(32px, 32px);
+    margin-bottom: 37px;
+  }
+}
+
+.contacts__list {
+  position: relative;
+  display: flex;
+  gap: 14px 100px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    gap: 27px 141px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 220px;
+    background-color: $color-light-slate-grey;
+
+    @include vp-1365 {
+      left: 251px;
+      top: -1px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+
+  @include vp-1365 {
+    width: 170px;
+  }
+}
+
+.contacts__item:nth-child(3n) {
+  @include vp-767 {
+    width: 170px;
+    order: 1;
+  }
+}
+
+.contacts__item:nth-child(3n-1) {
+  @include vp-767 {
+    width: 170px;
+    order: 2;
+  }
+}
+
+.contacts__item:last-child {
+  @include vp-767 {
+    width: 170px;
+    order: 3;
+  }
+}
+
+.contacts__header {
+  @include secondary-regular(24px, 24px);
+  display: flex;
+  margin: 0;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+
+  @include vp-1365 {
+    @include secondary-regular(22px, 22px);
+    margin-bottom: 11px;
+  }
+
+  @include vp-767 {
+    @include secondary-regular(20px, 20px);
+    margin-bottom: 12px;
+  }
+}
+
+.contacts__description {
+  @include secondary-regular(14px, 22px);
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+
+  @include vp-767 {
+    @include secondary-regular(14px, 20px);
+  }
+}

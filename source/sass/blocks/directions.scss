@@ -1,0 +1,28 @@
+.directions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 115px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-right: 2px;
+
+  @include vp-767 {
+    padding-top: 61px;
+    padding-right: 0;
+    margin-left: -2px;
+  }
+}
+
+.directions__item {
+  @include secondary-regular(14px, 22px);
+  display: flex;
+  justify-content: flex-end;
+  color: $color-default-white;
+  flex-wrap: wrap;
+
+  @include vp-767 {
+    @include secondary-regular(14px, 20px);
+  }
+}
